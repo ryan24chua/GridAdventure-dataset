@@ -1,0 +1,1395 @@
+{
+  "generator_version": "3",
+  "seed": 0,
+  "args": {
+    "seed": 0,
+    "out": "data/generated",
+    "single_per_class": 500,
+    "overlap": 6000,
+    "folds": 5,
+    "test_frac": 0.2,
+    "small": false,
+    "public_renders": 4
+  },
+  "folds": 5,
+  "test_frac": 0.2,
+  "groups": [
+    "fold0",
+    "fold1",
+    "fold2",
+    "fold3",
+    "fold4",
+    "test"
+  ],
+  "targets_per_group": {
+    "single": 500,
+    "overlap": 6000
+  },
+  "classes14": [
+    "floor",
+    "wall",
+    "human",
+    "box",
+    "coin",
+    "gem",
+    "key",
+    "locked",
+    "opened",
+    "lava",
+    "exit",
+    "boots",
+    "shield",
+    "ghost"
+  ],
+  "bg": [
+    "floor",
+    "wall"
+  ],
+  "main": [
+    "none",
+    "human",
+    "box",
+    "coin",
+    "gem",
+    "key",
+    "locked",
+    "opened",
+    "lava",
+    "exit",
+    "boots",
+    "shield",
+    "ghost"
+  ],
+  "under": [
+    "lava",
+    "exit",
+    "locked",
+    "opened"
+  ],
+  "icons": [
+    "none",
+    "coin",
+    "gem",
+    "key",
+    "boots",
+    "shield",
+    "ghost"
+  ],
+  "input_size": 32,
+  "preprocessing": {
+    "split_cells": "y0=y*H//h, y1=(y+1)*H//h, x0=x*W//w, x1=(x+1)*W//w; drop alpha",
+    "to_input": "PIL resize to 32x32, Image.BILINEAR, uint8",
+    "corner_crops": "cs=640//w; k=max(1, round(int(0.4*cs)*min(ch,cw)/cs)); flush NW,NE,SW,SE kxk crops of the native cell, each via to_input",
+    "cell_resolution": 640,
+    "mask": "cells of (image vs same level with no entities): any channel |diff| > 8 -> 255, else 0; PIL resize to 32x32, Image.BILINEAR, uint8"
+  },
+  "public_levels": [
+    "A0 Basic Movement",
+    "A1 Maze Turns",
+    "A2 Optional Coin Path",
+    "A3 Multiple Required Gems",
+    "A4 Key and Door",
+    "A5 Hazard Detour",
+    "A6 Pushable Box",
+    "A7 Shield Powerup",
+    "A8 Ghost Powerup",
+    "A9 Boots Powerup",
+    "A10 Combined Mechanics",
+    "B0 Thread the Needle",
+    "B1 Hypnosis",
+    "B2 The Vault",
+    "B3 So Close Yet So Far",
+    "B4 Measure Twice and Cut Once",
+    "B5 Ow Oof Owie",
+    "B6 Warehouse",
+    "B7 Fire Resistance",
+    "B8 Choose Wisely",
+    "B9 Manhattan",
+    "B10 Khoa Was Here",
+    "C0 Everything Everywhere All at Once",
+    "C1 The Heist"
+  ],
+  "split_files": {
+    "fold0": {
+      "floor": [
+        "floor_13.png",
+        "floor_19.png",
+        "floor_24.png",
+        "floor_7.png"
+      ],
+      "wall": [
+        "wall_12.png",
+        "wall_14.png",
+        "wall_24.png",
+        "wall_6.png"
+      ],
+      "human": [
+        "human_17.png",
+        "human_27.png",
+        "human_28.png",
+        "human_4.png",
+        "human_6.png",
+        "human_8.png"
+      ],
+      "box": [
+        "box_1.png",
+        "box_3.png",
+        "box_5.png"
+      ],
+      "coin": [
+        "coin_10.png",
+        "coin_15.png",
+        "coin_16.png",
+        "coin_25.png"
+      ],
+      "gem": [
+        "gem_15.png",
+        "gem_22.png",
+        "gem_23.png",
+        "gem_3.png"
+      ],
+      "key": [
+        "key_18.png",
+        "key_3.png",
+        "key_4.png",
+        "key_7.png"
+      ],
+      "locked": [
+        "locked_15.png",
+        "locked_16.png",
+        "locked_21.png",
+        "locked_4.png"
+      ],
+      "opened": [
+        "opened_18.png",
+        "opened_25.png",
+        "opened_4.png",
+        "opened_8.png"
+      ],
+      "lava": [
+        "lava_10.png",
+        "lava_13.png",
+        "lava_20.png",
+        "lava_25.png"
+      ],
+      "exit": [
+        "exit_10.png",
+        "exit_18.png",
+        "exit_19.png",
+        "exit_7.png"
+      ],
+      "boots": [
+        "boots_12.png",
+        "boots_13.png",
+        "boots_2.png",
+        "boots_21.png"
+      ],
+      "shield": [
+        "shield_1.png",
+        "shield_3.png",
+        "shield_6.png"
+      ],
+      "ghost": [
+        "ghost_1.png",
+        "ghost_17.png",
+        "ghost_20.png",
+        "ghost_24.png"
+      ]
+    },
+    "fold1": {
+      "floor": [
+        "floor_17.png",
+        "floor_18.png",
+        "floor_3.png",
+        "floor_8.png"
+      ],
+      "wall": [
+        "wall_18.png",
+        "wall_3.png",
+        "wall_4.png",
+        "wall_7.png"
+      ],
+      "human": [
+        "human_14.png",
+        "human_19.png",
+        "human_2.png",
+        "human_25.png",
+        "human_29.png"
+      ],
+      "box": [
+        "box_12.png",
+        "box_16.png",
+        "box_19.png"
+      ],
+      "coin": [
+        "coin_19.png",
+        "coin_3.png",
+        "coin_6.png",
+        "coin_8.png"
+      ],
+      "gem": [
+        "gem_11.png",
+        "gem_13.png",
+        "gem_16.png",
+        "gem_20.png"
+      ],
+      "key": [
+        "key_11.png",
+        "key_2.png",
+        "key_22.png",
+        "key_6.png"
+      ],
+      "locked": [
+        "locked_13.png",
+        "locked_17.png",
+        "locked_19.png",
+        "locked_22.png"
+      ],
+      "opened": [
+        "opened_10.png",
+        "opened_16.png",
+        "opened_2.png",
+        "opened_24.png"
+      ],
+      "lava": [
+        "lava_14.png",
+        "lava_21.png",
+        "lava_24.png",
+        "lava_4.png"
+      ],
+      "exit": [
+        "exit_1.png",
+        "exit_14.png",
+        "exit_20.png",
+        "exit_4.png"
+      ],
+      "boots": [
+        "boots_10.png",
+        "boots_14.png",
+        "boots_15.png",
+        "boots_22.png"
+      ],
+      "shield": [
+        "shield_13.png",
+        "shield_2.png",
+        "shield_4.png"
+      ],
+      "ghost": [
+        "ghost_12.png",
+        "ghost_18.png",
+        "ghost_21.png",
+        "ghost_23.png"
+      ]
+    },
+    "fold2": {
+      "floor": [
+        "floor_1.png",
+        "floor_21.png",
+        "floor_22.png",
+        "floor_4.png"
+      ],
+      "wall": [
+        "wall_1.png",
+        "wall_17.png",
+        "wall_2.png",
+        "wall_23.png"
+      ],
+      "human": [
+        "human_10.png",
+        "human_13.png",
+        "human_16.png",
+        "human_18.png",
+        "human_7.png"
+      ],
+      "box": [
+        "box_18.png",
+        "box_2.png",
+        "box_9.png"
+      ],
+      "coin": [
+        "coin_12.png",
+        "coin_13.png",
+        "coin_2.png",
+        "coin_23.png"
+      ],
+      "gem": [
+        "gem_1.png",
+        "gem_12.png",
+        "gem_18.png",
+        "gem_24.png"
+      ],
+      "key": [
+        "key_10.png",
+        "key_15.png",
+        "key_8.png",
+        "key_9.png"
+      ],
+      "locked": [
+        "locked_11.png",
+        "locked_5.png",
+        "locked_6.png",
+        "locked_9.png"
+      ],
+      "opened": [
+        "opened_1.png",
+        "opened_11.png",
+        "opened_14.png",
+        "opened_17.png"
+      ],
+      "lava": [
+        "lava_12.png",
+        "lava_15.png",
+        "lava_17.png",
+        "lava_8.png"
+      ],
+      "exit": [
+        "exit_11.png",
+        "exit_2.png",
+        "exit_3.png",
+        "exit_6.png"
+      ],
+      "boots": [
+        "boots_11.png",
+        "boots_20.png",
+        "boots_4.png",
+        "boots_6.png"
+      ],
+      "shield": [
+        "shield_17.png",
+        "shield_18.png",
+        "shield_9.png"
+      ],
+      "ghost": [
+        "ghost_14.png",
+        "ghost_25.png",
+        "ghost_6.png",
+        "ghost_9.png"
+      ]
+    },
+    "fold3": {
+      "floor": [
+        "floor_10.png",
+        "floor_15.png",
+        "floor_20.png",
+        "floor_23.png"
+      ],
+      "wall": [
+        "wall_10.png",
+        "wall_11.png",
+        "wall_16.png",
+        "wall_20.png"
+      ],
+      "human": [
+        "human_11.png",
+        "human_15.png",
+        "human_26.png",
+        "human_31.png",
+        "human_9.png"
+      ],
+      "box": [
+        "box_14.png",
+        "box_15.png",
+        "box_6.png"
+      ],
+      "coin": [
+        "coin_1.png",
+        "coin_14.png",
+        "coin_5.png",
+        "coin_9.png"
+      ],
+      "gem": [
+        "gem_19.png",
+        "gem_2.png",
+        "gem_4.png",
+        "gem_9.png"
+      ],
+      "key": [
+        "key_13.png",
+        "key_19.png",
+        "key_21.png"
+      ],
+      "locked": [
+        "locked_14.png",
+        "locked_3.png",
+        "locked_7.png"
+      ],
+      "opened": [
+        "opened_12.png",
+        "opened_15.png",
+        "opened_21.png",
+        "opened_6.png"
+      ],
+      "lava": [
+        "lava_1.png",
+        "lava_16.png",
+        "lava_23.png",
+        "lava_9.png"
+      ],
+      "exit": [
+        "exit_12.png",
+        "exit_16.png",
+        "exit_21.png"
+      ],
+      "boots": [
+        "boots_1.png",
+        "boots_18.png",
+        "boots_5.png"
+      ],
+      "shield": [
+        "shield_10.png",
+        "shield_12.png",
+        "shield_15.png"
+      ],
+      "ghost": [
+        "ghost_13.png",
+        "ghost_22.png",
+        "ghost_5.png",
+        "ghost_8.png"
+      ]
+    },
+    "fold4": {
+      "floor": [
+        "floor_12.png",
+        "floor_14.png",
+        "floor_2.png",
+        "floor_5.png"
+      ],
+      "wall": [
+        "wall_19.png",
+        "wall_5.png",
+        "wall_8.png",
+        "wall_9.png"
+      ],
+      "human": [
+        "human_23.png",
+        "human_24.png",
+        "human_3.png",
+        "human_32.png",
+        "human_5.png"
+      ],
+      "box": [
+        "box_13.png",
+        "box_17.png",
+        "box_7.png"
+      ],
+      "coin": [
+        "coin_17.png",
+        "coin_18.png",
+        "coin_20.png",
+        "coin_24.png"
+      ],
+      "gem": [
+        "gem_14.png",
+        "gem_17.png",
+        "gem_6.png",
+        "gem_7.png"
+      ],
+      "key": [
+        "key_1.png",
+        "key_17.png",
+        "key_20.png"
+      ],
+      "locked": [
+        "locked_1.png",
+        "locked_2.png",
+        "locked_20.png"
+      ],
+      "opened": [
+        "opened_13.png",
+        "opened_19.png",
+        "opened_5.png",
+        "opened_9.png"
+      ],
+      "lava": [
+        "lava_11.png",
+        "lava_18.png",
+        "lava_2.png",
+        "lava_6.png"
+      ],
+      "exit": [
+        "exit_13.png",
+        "exit_17.png",
+        "exit_22.png"
+      ],
+      "boots": [
+        "boots_17.png",
+        "boots_19.png",
+        "boots_9.png"
+      ],
+      "shield": [
+        "shield_16.png",
+        "shield_5.png",
+        "shield_7.png"
+      ],
+      "ghost": [
+        "ghost_11.png",
+        "ghost_15.png",
+        "ghost_2.png",
+        "ghost_7.png"
+      ]
+    },
+    "test": {
+      "floor": [
+        "floor_11.png",
+        "floor_16.png",
+        "floor_25.png",
+        "floor_6.png",
+        "floor_9.png"
+      ],
+      "wall": [
+        "wall_13.png",
+        "wall_15.png",
+        "wall_21.png",
+        "wall_22.png",
+        "wall_25.png"
+      ],
+      "human": [
+        "human_1.png",
+        "human_12.png",
+        "human_20.png",
+        "human_21.png",
+        "human_22.png",
+        "human_30.png"
+      ],
+      "box": [
+        "box_10.png",
+        "box_11.png",
+        "box_4.png",
+        "box_8.png"
+      ],
+      "coin": [
+        "coin_11.png",
+        "coin_21.png",
+        "coin_22.png",
+        "coin_4.png",
+        "coin_7.png"
+      ],
+      "gem": [
+        "gem_10.png",
+        "gem_21.png",
+        "gem_25.png",
+        "gem_5.png",
+        "gem_8.png"
+      ],
+      "key": [
+        "key_12.png",
+        "key_14.png",
+        "key_16.png",
+        "key_5.png"
+      ],
+      "locked": [
+        "locked_10.png",
+        "locked_12.png",
+        "locked_18.png",
+        "locked_8.png"
+      ],
+      "opened": [
+        "opened_20.png",
+        "opened_22.png",
+        "opened_23.png",
+        "opened_3.png",
+        "opened_7.png"
+      ],
+      "lava": [
+        "lava_19.png",
+        "lava_22.png",
+        "lava_3.png",
+        "lava_5.png",
+        "lava_7.png"
+      ],
+      "exit": [
+        "exit_15.png",
+        "exit_5.png",
+        "exit_8.png",
+        "exit_9.png"
+      ],
+      "boots": [
+        "boots_16.png",
+        "boots_3.png",
+        "boots_7.png",
+        "boots_8.png"
+      ],
+      "shield": [
+        "shield_11.png",
+        "shield_14.png",
+        "shield_19.png",
+        "shield_8.png"
+      ],
+      "ghost": [
+        "ghost_10.png",
+        "ghost_16.png",
+        "ghost_19.png",
+        "ghost_3.png",
+        "ghost_4.png"
+      ]
+    }
+  },
+  "public_renders": 4,
+  "public_fold_splits": [
+    "public_fold0",
+    "public_fold1",
+    "public_fold2",
+    "public_fold3",
+    "public_fold4"
+  ],
+  "counts": {
+    "fold0": {
+      "cells": 13001,
+      "cls14": {
+        "floor": 500,
+        "wall": 500,
+        "human": 500,
+        "box": 500,
+        "coin": 500,
+        "gem": 500,
+        "key": 500,
+        "locked": 500,
+        "opened": 500,
+        "lava": 500,
+        "exit": 500,
+        "boots": 500,
+        "shield": 500,
+        "ghost": 500,
+        "overlap": 6001
+      },
+      "main": {
+        "none": 1000,
+        "human": 3846,
+        "box": 2170,
+        "coin": 668,
+        "gem": 652,
+        "key": 656,
+        "locked": 511,
+        "opened": 509,
+        "lava": 504,
+        "exit": 508,
+        "boots": 666,
+        "shield": 642,
+        "ghost": 669
+      },
+      "corner": {
+        "none": 45994,
+        "coin": 1031,
+        "gem": 978,
+        "key": 1055,
+        "boots": 1001,
+        "shield": 942,
+        "ghost": 1003
+      },
+      "bg": {
+        "floor": 10958,
+        "wall": 2043
+      },
+      "under": {
+        "lava": 624,
+        "exit": 600,
+        "locked": 285,
+        "opened": 587
+      }
+    },
+    "fold1": {
+      "cells": 13001,
+      "cls14": {
+        "floor": 501,
+        "wall": 500,
+        "human": 500,
+        "box": 500,
+        "coin": 500,
+        "gem": 500,
+        "key": 500,
+        "locked": 500,
+        "opened": 500,
+        "lava": 500,
+        "exit": 500,
+        "boots": 500,
+        "shield": 500,
+        "ghost": 500,
+        "overlap": 6000
+      },
+      "main": {
+        "none": 1001,
+        "human": 3891,
+        "box": 2083,
+        "coin": 679,
+        "gem": 680,
+        "key": 659,
+        "locked": 507,
+        "opened": 505,
+        "lava": 514,
+        "exit": 509,
+        "boots": 674,
+        "shield": 651,
+        "ghost": 648
+      },
+      "corner": {
+        "none": 46043,
+        "coin": 1013,
+        "gem": 978,
+        "key": 964,
+        "boots": 1019,
+        "shield": 959,
+        "ghost": 1028
+      },
+      "bg": {
+        "floor": 10943,
+        "wall": 2058
+      },
+      "under": {
+        "lava": 619,
+        "exit": 631,
+        "locked": 274,
+        "opened": 556
+      }
+    },
+    "fold2": {
+      "cells": 13082,
+      "cls14": {
+        "floor": 503,
+        "wall": 502,
+        "human": 505,
+        "box": 502,
+        "coin": 502,
+        "gem": 502,
+        "key": 502,
+        "locked": 506,
+        "opened": 507,
+        "lava": 502,
+        "exit": 504,
+        "boots": 503,
+        "shield": 504,
+        "ghost": 506,
+        "overlap": 6032
+      },
+      "main": {
+        "none": 1005,
+        "human": 3904,
+        "box": 2127,
+        "coin": 666,
+        "gem": 669,
+        "key": 671,
+        "locked": 511,
+        "opened": 519,
+        "lava": 511,
+        "exit": 511,
+        "boots": 668,
+        "shield": 658,
+        "ghost": 662
+      },
+      "corner": {
+        "none": 46402,
+        "coin": 998,
+        "gem": 1008,
+        "key": 974,
+        "boots": 978,
+        "shield": 964,
+        "ghost": 1004
+      },
+      "bg": {
+        "floor": 11096,
+        "wall": 1986
+      },
+      "under": {
+        "lava": 587,
+        "exit": 579,
+        "locked": 270,
+        "opened": 577
+      }
+    },
+    "fold3": {
+      "cells": 13152,
+      "cls14": {
+        "floor": 503,
+        "wall": 503,
+        "human": 503,
+        "box": 501,
+        "coin": 505,
+        "gem": 504,
+        "key": 504,
+        "locked": 502,
+        "opened": 502,
+        "lava": 500,
+        "exit": 504,
+        "boots": 502,
+        "shield": 502,
+        "ghost": 501,
+        "overlap": 6116
+      },
+      "main": {
+        "none": 1006,
+        "human": 3986,
+        "box": 2101,
+        "coin": 670,
+        "gem": 677,
+        "key": 683,
+        "locked": 515,
+        "opened": 516,
+        "lava": 507,
+        "exit": 516,
+        "boots": 667,
+        "shield": 664,
+        "ghost": 644
+      },
+      "corner": {
+        "none": 46498,
+        "coin": 992,
+        "gem": 999,
+        "key": 1038,
+        "boots": 1051,
+        "shield": 972,
+        "ghost": 1058
+      },
+      "bg": {
+        "floor": 11119,
+        "wall": 2033
+      },
+      "under": {
+        "lava": 568,
+        "exit": 615,
+        "locked": 303,
+        "opened": 580
+      }
+    },
+    "fold4": {
+      "cells": 13158,
+      "cls14": {
+        "floor": 507,
+        "wall": 508,
+        "human": 505,
+        "box": 506,
+        "coin": 508,
+        "gem": 506,
+        "key": 511,
+        "locked": 509,
+        "opened": 507,
+        "lava": 502,
+        "exit": 511,
+        "boots": 504,
+        "shield": 506,
+        "ghost": 511,
+        "overlap": 6057
+      },
+      "main": {
+        "none": 1015,
+        "human": 3856,
+        "box": 2144,
+        "coin": 669,
+        "gem": 673,
+        "key": 702,
+        "locked": 521,
+        "opened": 524,
+        "lava": 511,
+        "exit": 519,
+        "boots": 682,
+        "shield": 666,
+        "ghost": 676
+      },
+      "corner": {
+        "none": 46619,
+        "coin": 989,
+        "gem": 1013,
+        "key": 1009,
+        "boots": 990,
+        "shield": 990,
+        "ghost": 1022
+      },
+      "bg": {
+        "floor": 11161,
+        "wall": 1997
+      },
+      "under": {
+        "lava": 592,
+        "exit": 591,
+        "locked": 326,
+        "opened": 631
+      }
+    },
+    "test": {
+      "cells": 13047,
+      "cls14": {
+        "floor": 502,
+        "wall": 504,
+        "human": 501,
+        "box": 501,
+        "coin": 501,
+        "gem": 502,
+        "key": 500,
+        "locked": 504,
+        "opened": 501,
+        "lava": 504,
+        "exit": 500,
+        "boots": 502,
+        "shield": 503,
+        "ghost": 502,
+        "overlap": 6020
+      },
+      "main": {
+        "none": 1006,
+        "human": 3921,
+        "box": 2079,
+        "coin": 680,
+        "gem": 656,
+        "key": 656,
+        "locked": 508,
+        "opened": 513,
+        "lava": 515,
+        "exit": 506,
+        "boots": 679,
+        "shield": 672,
+        "ghost": 656
+      },
+      "corner": {
+        "none": 46227,
+        "coin": 1024,
+        "gem": 1028,
+        "key": 976,
+        "boots": 994,
+        "shield": 937,
+        "ghost": 1002
+      },
+      "bg": {
+        "floor": 11058,
+        "wall": 1989
+      },
+      "under": {
+        "lava": 563,
+        "exit": 664,
+        "locked": 307,
+        "opened": 590
+      }
+    },
+    "public": {
+      "cells": 3688,
+      "cls14": {
+        "floor": 2368,
+        "wall": 1057,
+        "human": 24,
+        "box": 4,
+        "coin": 70,
+        "gem": 12,
+        "key": 10,
+        "locked": 10,
+        "opened": 0,
+        "lava": 87,
+        "exit": 24,
+        "boots": 7,
+        "shield": 6,
+        "ghost": 9,
+        "overlap": 0
+      },
+      "main": {
+        "none": 3425,
+        "human": 24,
+        "box": 4,
+        "coin": 70,
+        "gem": 12,
+        "key": 10,
+        "locked": 10,
+        "opened": 0,
+        "lava": 87,
+        "exit": 24,
+        "boots": 7,
+        "shield": 6,
+        "ghost": 9
+      },
+      "corner": {
+        "none": 14752,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 2631,
+        "wall": 1057
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_test": {
+      "cells": 3688,
+      "cls14": {
+        "floor": 2368,
+        "wall": 1057,
+        "human": 24,
+        "box": 4,
+        "coin": 70,
+        "gem": 12,
+        "key": 10,
+        "locked": 10,
+        "opened": 0,
+        "lava": 87,
+        "exit": 24,
+        "boots": 7,
+        "shield": 6,
+        "ghost": 9,
+        "overlap": 0
+      },
+      "main": {
+        "none": 3425,
+        "human": 24,
+        "box": 4,
+        "coin": 70,
+        "gem": 12,
+        "key": 10,
+        "locked": 10,
+        "opened": 0,
+        "lava": 87,
+        "exit": 24,
+        "boots": 7,
+        "shield": 6,
+        "ghost": 9
+      },
+      "corner": {
+        "none": 14752,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 2631,
+        "wall": 1057
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_fold0": {
+      "cells": 14752,
+      "cls14": {
+        "floor": 9472,
+        "wall": 4228,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36,
+        "overlap": 0
+      },
+      "main": {
+        "none": 13700,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36
+      },
+      "corner": {
+        "none": 59008,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 10524,
+        "wall": 4228
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_fold1": {
+      "cells": 14752,
+      "cls14": {
+        "floor": 9472,
+        "wall": 4228,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36,
+        "overlap": 0
+      },
+      "main": {
+        "none": 13700,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36
+      },
+      "corner": {
+        "none": 59008,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 10524,
+        "wall": 4228
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_fold2": {
+      "cells": 14752,
+      "cls14": {
+        "floor": 9472,
+        "wall": 4228,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36,
+        "overlap": 0
+      },
+      "main": {
+        "none": 13700,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36
+      },
+      "corner": {
+        "none": 59008,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 10524,
+        "wall": 4228
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_fold3": {
+      "cells": 14752,
+      "cls14": {
+        "floor": 9472,
+        "wall": 4228,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36,
+        "overlap": 0
+      },
+      "main": {
+        "none": 13700,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36
+      },
+      "corner": {
+        "none": 59008,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 10524,
+        "wall": 4228
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    },
+    "public_fold4": {
+      "cells": 14752,
+      "cls14": {
+        "floor": 9472,
+        "wall": 4228,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36,
+        "overlap": 0
+      },
+      "main": {
+        "none": 13700,
+        "human": 96,
+        "box": 16,
+        "coin": 280,
+        "gem": 48,
+        "key": 40,
+        "locked": 40,
+        "opened": 0,
+        "lava": 348,
+        "exit": 96,
+        "boots": 28,
+        "shield": 24,
+        "ghost": 36
+      },
+      "corner": {
+        "none": 59008,
+        "coin": 0,
+        "gem": 0,
+        "key": 0,
+        "boots": 0,
+        "shield": 0,
+        "ghost": 0
+      },
+      "bg": {
+        "floor": 10524,
+        "wall": 4228
+      },
+      "under": {
+        "lava": 0,
+        "exit": 0,
+        "locked": 0,
+        "opened": 0
+      }
+    }
+  },
+  "corner_counts": {
+    "fold0": {
+      "none": 20778,
+      "coin": 1031,
+      "gem": 978,
+      "key": 1055,
+      "boots": 1001,
+      "shield": 942,
+      "ghost": 1003
+    },
+    "fold1": {
+      "none": 20695,
+      "coin": 1013,
+      "gem": 978,
+      "key": 964,
+      "boots": 1019,
+      "shield": 959,
+      "ghost": 1028
+    },
+    "fold2": {
+      "none": 21158,
+      "coin": 998,
+      "gem": 1008,
+      "key": 974,
+      "boots": 978,
+      "shield": 964,
+      "ghost": 1004
+    },
+    "fold3": {
+      "none": 21110,
+      "coin": 992,
+      "gem": 999,
+      "key": 1038,
+      "boots": 1051,
+      "shield": 972,
+      "ghost": 1058
+    },
+    "fold4": {
+      "none": 21059,
+      "coin": 989,
+      "gem": 1013,
+      "key": 1009,
+      "boots": 990,
+      "shield": 990,
+      "ghost": 1022
+    },
+    "test": {
+      "none": 20995,
+      "coin": 1024,
+      "gem": 1028,
+      "key": 976,
+      "boots": 994,
+      "shield": 937,
+      "ghost": 1002
+    }
+  }
+}
